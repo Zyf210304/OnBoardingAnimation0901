@@ -100,45 +100,80 @@ struct OnBoarding: View {
             
                 HStack{
                     
-                    Button {
+                    HStack {
+                        Button {
+                            
+                            offset = max(offset - getScreenBounds().width, 0)
+                            
+                        } label: {
+                            
+                            Text("Skip")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                        }
                         
-                        offset = max(offset - getScreenBounds().width, 0)
-                        
-                    } label: {
-                        
-                        Text("Skip")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
+                        Spacer()
                     }
+                    
                     
                     
                     //indicators...
-                    HStack(spacing: 8) {
-                        
-                        ForEach(boardingScreens.indices, id: \.self) { index in
-                            
-                            Circle()
+//                    HStack(spacing: 8) {
+//
+//                        ForEach(boardingScreens.indices, id: \.self) { index in
+//
+//                            Circle()
+//                                .fill(.white)
+//                                .opacity(index == getIndex() ? 1 : 0.4)
+//                                .frame(width: 8, height: 8)
+//                                .scaleEffect(index == getIndex() ? 1.3 : 0.85)
+//                                .animation(.easeInOut, value: getIndex())
+//                        }
+//                    }
+//                    .frame(maxWidth:.infinity)
+                    
+
+                    HStack(spacing:12) {
+
+                        ForEach(boardingScreens.indices, id: \.self) { index  in
+
+                            Capsule()
                                 .fill(.white)
-                                .opacity(index == getIndex() ? 1 : 0.4)
-                                .frame(width: 8, height: 8)
-                                .scaleEffect(index == getIndex() ? 1.3 : 0.85)
-                                .animation(.easeInOut, value: getIndex())
+                            //increasing width for only current index...
+                                .frame(width: getIndex() == index ? 20 : 7, height: 7)
+
                         }
                     }
-                    .frame(maxWidth:.infinity)
+                    .overlay(
+
+                        Capsule()
+                            .fill(.white)
+                            .frame(width: 20, height: 7)
+                            .offset(x: getIndicatorOffset())
+
+                        ,alignment: .leading
+                    )
                     
                     
-                    Button {
+                    HStack {
                         
-                        offset = min(offset + getScreenBounds().width, getScreenBounds().width * 3)
-                    } label: {
+                        Spacer()
                         
-                        Text("Next")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
+                        Button {
+                            
+                            
+                            offset = min(offset + getScreenBounds().width, getScreenBounds().width * 3)
+                        } label: {
+                            
+                            Text("Next")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                        }
+                    
                     }
 
                 }
+                .frame(maxWidth: .infinity)
                 .padding(.top, 30)
                 .padding(.horizontal, 8)
             }
@@ -166,6 +201,18 @@ struct OnBoarding: View {
         let progress = (offset / getScreenBounds().width).rounded()
         
         return  Int(progress)
+    }
+    
+    //offset for indicator...
+    func getIndicatorOffset() -> CGFloat {
+        
+        let progress = offset / getScreenBounds().width
+        
+        //12 = spacing
+        //7 = circleSize
+        let maxWidth: CGFloat = 12 + 7
+        
+        return progress * maxWidth
     }
     
     
