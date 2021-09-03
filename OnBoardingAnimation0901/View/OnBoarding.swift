@@ -133,26 +133,29 @@ struct OnBoarding: View {
 //                    .frame(maxWidth:.infinity)
                     
 
-                    HStack(spacing:12) {
-
-                        ForEach(boardingScreens.indices, id: \.self) { index  in
-
-                            Capsule()
-                                .fill(.white)
-                            //increasing width for only current index...
-                                .frame(width: getIndex() == index ? 20 : 7, height: 7)
-
-                        }
-                    }
-                    .overlay(
-
-                        Capsule()
-                            .fill(.white)
-                            .frame(width: 20, height: 7)
-                            .offset(x: getIndicatorOffset())
-
-                        ,alignment: .leading
-                    )
+                    YFCapsuleIndicators(dataArr: boardingScreens, pageWidth: getScreenBounds().width, offset: $offset)
+                    
+                    
+//                    HStack(spacing:12) {
+//
+//                        ForEach(boardingScreens.indices, id: \.self) { index  in
+//
+//                            Capsule()
+//                                .fill(.white)
+//                            //increasing width for only current index...
+//                                .frame(width: getIndex() == index ? 20 : 7, height: 7)
+//
+//                        }
+//                    }
+//                    .overlay(
+//
+//                        Capsule()
+//                            .fill(.white)
+//                            .frame(width: 20, height: 7)
+//                            .offset(x: getIndicatorOffset())
+//
+//                        ,alignment: .leading
+//                    )
                     
                     
                     HStack {

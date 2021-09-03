@@ -14,6 +14,7 @@
 		022D663A26DF45DC0009DAAD /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D663926DF45DC0009DAAD /* OnBoarding.swift */; };
 		022D663F26DF462A0009DAAD /* BoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D663E26DF462A0009DAAD /* BoardingScreen.swift */; };
 		022D664126DF47C50009DAAD /* YFOffsetPageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D664026DF47C50009DAAD /* YFOffsetPageTabView.swift */; };
+		02E9109826E1B3B9002F8736 /* YFCapsuleIndicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9109726E1B3B9002F8736 /* YFCapsuleIndicators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		022D663926DF45DC0009DAAD /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
 		022D663E26DF462A0009DAAD /* BoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen.swift; sourceTree = "<group>"; };
 		022D664026DF47C50009DAAD /* YFOffsetPageTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFOffsetPageTabView.swift; sourceTree = "<group>"; };
+		02E9109726E1B3B9002F8736 /* YFCapsuleIndicators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFCapsuleIndicators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				022D664026DF47C50009DAAD /* YFOffsetPageTabView.swift */,
 				022D663926DF45DC0009DAAD /* OnBoarding.swift */,
+				02E9109726E1B3B9002F8736 /* YFCapsuleIndicators.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				022D662D26DF42EC0009DAAD /* ContentView.swift in Sources */,
 				022D663F26DF462A0009DAAD /* BoardingScreen.swift in Sources */,
 				022D663A26DF45DC0009DAAD /* OnBoarding.swift in Sources */,
+				02E9109826E1B3B9002F8736 /* YFCapsuleIndicators.swift in Sources */,
 				022D662B26DF42EC0009DAAD /* OnBoardingAnimation0901App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
